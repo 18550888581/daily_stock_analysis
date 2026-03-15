@@ -591,88 +591,93 @@ class GeminiAnalyzer:
   "confidence_level": "高/中/低",
   "dashboard": {
     "core_conclusion": {
-      "one_sentence": "一句话核心结论（30字以内，直接告诉用户做什么）",
+      "one_sentence": "一句话核心结论（30字以内）",
       "signal_type": "买入信号/持有观望/卖出信号/⚠️风险警告",
       "time_sensitivity": "立即行动/今日内/本周内/不急",
       "position_advice": {
-        "no_position": "空仓者建议：具体操作指引",
-        "has_position": "持仓者建议：具体操作指引"
+        "no_position": "空仓者建议",
+        "has_position": "持仓者建议"
       }
     },
     "data_perspective": {
-      "price_position": "高位/中位/低位/启动位/回踩位",
-      "ma_structure": "均线结构评价，需突出MA10/MA20/MA60关系",
-      "volume_status": "放量/缩量/量价配合一般/量价背离",
-      "chip_structure": "筹码结构简述"
+      "trend_status": {
+        "ma_alignment": "均线关系描述",
+        "is_bullish": true,
+        "trend_score": 0
+      },
+      "price_position": {
+        "current_price": 0,
+        "ma5": 0,
+        "ma10": 0,
+        "ma20": 0,
+        "bias_ma5": 0,
+        "bias_status": "乖离状态",
+        "support_level": 0,
+        "resistance_level": 0
+      },
+      "volume_analysis": {
+        "volume_ratio": 0,
+        "volume_status": "放量/缩量/一般",
+        "turnover_rate": 0,
+        "volume_meaning": "量能解读"
+      },
+      "chip_structure": {
+        "profit_ratio": 0,
+        "avg_cost": 0,
+        "concentration": 0,
+        "chip_health": "健康/一般/警惕"
+      }
     },
     "intelligence": {
-      "latest_news": "最新重要消息摘要",
+      "latest_news": "最新消息摘要",
       "risk_alerts": [
         "风险点1",
         "风险点2"
       ],
-      "positive_catalyst": "最重要正向催化",
-      "earnings_expectation": "业绩预期简述",
+      "positive_catalysts": [
+        "正向催化1",
+        "正向催化2"
+      ],
+      "earnings_outlook": "业绩展望",
       "sentiment_summary": "舆情与市场情绪总结"
     },
     "battle_plan": {
       "sniper_points": {
-        "ideal_buy_zone": "理想买点区间，优先写回踩买点，不鼓励追高",
-        "secondary_buy_zone": "次优买点区间",
-        "stop_loss": "明确止损位或失效条件",
-        "take_profit": "阶段止盈思路"
+        "ideal_buy": "理想买点",
+        "secondary_buy": "次优买点",
+        "stop_loss": "止损位",
+        "take_profit": "止盈思路"
       },
-      "position_size": "建议仓位",
-      "batch_plan": "分批建仓计划",
-      "risk_control": "风控要点",
-      "checklist": [
-        "观察点1",
-        "观察点2",
-        "观察点3"
+      "position_strategy": {
+        "suggested_position": "建议仓位",
+        "entry_plan": "分批进入计划",
+        "risk_control": "风控原则"
+      },
+      "action_checklist": [
+        "检查项1",
+        "检查项2",
+        "检查项3"
       ]
     }
   },
-  "analysis_summary": "80-150字总结，必须体现中线趋势、位置、操作思路",
-  "key_points": [
-    "看多逻辑1",
-    "看多逻辑2",
-    "看多逻辑3"
-  ],
-  "risk_warning": [
-    "风险点1",
-    "风险点2"
-  ],
-  "buy_reason": "为什么值得关注或为什么暂不适合关注",
-  "trend_analysis": "重点分析趋势，不要只看短线，要兼顾MA20和MA60",
-  "short_term_outlook": "未来1-5个交易日展望",
-  "medium_term_outlook": "未来2-8周展望",
-  "technical_analysis": {
-    "summary": "技术面总结",
-    "ma_analysis": "均线分析，突出趋势与支撑",
-    "volume_analysis": "量能分析",
-    "pattern_analysis": "形态分析"
-  },
-  "fundamental_analysis": {
-    "summary": "基本面总结",
-    "sector_position": "行业位置与竞争力",
-    "company_highlights": "公司亮点"
-  },
-  "news_summary": "新闻总结",
-  "market_sentiment": "市场情绪总结",
-  "hot_topics": [
-    "热点1",
-    "热点2"
-  ],
-  "search_performed": true,
-  "data_sources": [
-    "技术面数据",
-    "新闻信息",
-    "基本面信息"
-  ]
+  "analysis_summary": "100字综合分析摘要",
+  "key_points": "3-5个核心看点，逗号分隔",
+  "risk_warning": "风险提示",
+  "buy_reason": "操作理由，引用交易理念",
+  "trend_analysis": "走势形态分析",
+  "short_term_outlook": "短期1-5个交易日展望",
+  "medium_term_outlook": "中期2-8周展望",
+  "technical_analysis": "技术面综合分析",
+  "ma_analysis": "均线系统分析",
+  "volume_analysis": "量能分析",
+  "pattern_analysis": "K线形态分析",
+  "fundamental_analysis": "基本面分析",
+  "sector_position": "板块行业分析",
+  "company_highlights": "公司亮点/风险",
+  "news_summary": "新闻摘要",
+  "market_sentiment": "市场情绪",
+  "hot_topics": "相关热点"
 }
-
-
-
 
 ## 三、关键写作要求
 
