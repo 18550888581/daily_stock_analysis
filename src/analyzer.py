@@ -110,7 +110,7 @@ def _is_value_placeholder(v: Any) -> bool:
     if isinstance(v, (int, float)) and v == 0:
         return True
     s = str(v).strip().lower()
-    return s in ("", "n/a", "na", "数据缺失", "未知")
+    returnin ("", "n/a", "na", "数据缺失", "未知")
 
 
 def _safe_float(v: Any, default: float = 0.0) -> float:
@@ -607,16 +607,21 @@ class GeminiAnalyzer:
     },
     "intelligence": {
       "latest_news": "最新重要消息摘要",
-      "risk_alert": "最重要风险点",
+      "risk_alerts": [
+        "风险点1",
+        "风险点2"
+      ],
       "positive_catalyst": "最重要正向催化",
       "earnings_expectation": "业绩预期简述",
       "sentiment_summary": "舆情与市场情绪总结"
     },
     "battle_plan": {
-      "ideal_buy_zone": "理想买点区间，优先写回踩买点，不鼓励追高",
-      "secondary_buy_zone": "次优买点区间",
-      "stop_loss": "明确止损位或失效条件",
-      "take_profit": "阶段止盈思路",
+      "sniper_points": {
+        "ideal_buy_zone": "理想买点区间，优先写回踩买点，不鼓励追高",
+        "secondary_buy_zone": "次优买点区间",
+        "stop_loss": "明确止损位或失效条件",
+        "take_profit": "阶段止盈思路"
+      },
       "position_size": "建议仓位",
       "batch_plan": "分批建仓计划",
       "risk_control": "风控要点",
@@ -666,6 +671,9 @@ class GeminiAnalyzer:
   ]
 }
 
+
+
+
 ## 三、关键写作要求
 
 1. 结论必须直接、克制、可执行，不能空泛。
@@ -682,6 +690,8 @@ class GeminiAnalyzer:
 6. 如果股票处于强趋势但短线偏热，优先给出“持股观察 / 等回踩 / 分批介入”的中性建议，而不是简单粗暴地否决。
 7. 如果股票明显走弱、跌破关键中线支撑、基本面或消息面存在重大风险，应明确降低评分并偏向“观望/减仓/卖出”。
 8. 所有分析都必须服务于“中线趋势跟踪”这一目标。
+9. intelligence.risk_alerts 必须返回数组，即使只有一个风险点，也要用数组格式返回。
+10. battle_plan.sniper_points 下必须完整包含 ideal_buy_zone、secondary_buy_zone、stop_loss、take_profit 四个字段，不得省略。
 """
     
     def __init__(self, api_key: Optional[str] = None):
