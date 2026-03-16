@@ -161,7 +161,7 @@ jobs:
           # ==========================================
           
           REPORT_TYPE: 'full'
-          SINGLE_STOCK_NOTIFY: 'true'
+          SINGLE_STOCK_NOTIFY: 'false'
           MARKET_REVIEW_ENABLED: 'false'
           
           ANALYSIS_DELAY: ${{ vars.ANALYSIS_DELAY || secrets.ANALYSIS_DELAY || '0' }}
