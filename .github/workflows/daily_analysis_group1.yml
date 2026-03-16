@@ -160,7 +160,7 @@ jobs:
           # 运行配置 ⬅️ 新增！
           # ==========================================
           REPORT_TYPE: 'full'
-          SINGLE_STOCK_NOTIFY: 'true'
+          SINGLE_STOCK_NOTIFY: 'false'
           MARKET_REVIEW_ENABLED: 'true'
           ANALYSIS_DELAY: ${{ vars.ANALYSIS_DELAY || secrets.ANALYSIS_DELAY || '0' }}
           TRADING_DAY_CHECK_ENABLED: ${{ vars.TRADING_DAY_CHECK_ENABLED || secrets.TRADING_DAY_CHECK_ENABLED || 'true' }}
